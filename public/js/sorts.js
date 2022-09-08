@@ -7,77 +7,59 @@ window.onload = () => {
       //for loop to generate 20 bars
       for (let i = 0; i < num; i += 1) {
       
-        // To generate random values from 15 - 100
+        // generates random values from 15 - 100
         const value = Math.floor(Math.random() * 85) + 15; 
           
-        // To create element "div"
+        // makes div element
         const bar = document.createElement("div");
       
-        // To add class "bar" to "div"
+        // adds bar class to div
         bar.classList.add("bar");
       
-        // Provide height to the bar
+        // sets hight based on value
         bar.style.height = `${value * 3}px`;
       
-        // Translate the bar towards positive X axis 
+        // transforms bar on x axis
         bar.style.transform = `translateX(${i * 30}px)`;
           
-        // To create element "label"
+        // makes a label
         const barLabel = document.createElement("label");
       
-        // To add class "bar_id" to "label"
+        // adds bar_id to label
         barLabel.classList.add("bar_id");
       
-        // Assign value to "label"
+        // sets the value of the height to inner html
         barLabel.innerHTML = value;
         
-        // Append "Label" to "div"
+        // adds label to div
         bar.appendChild(barLabel);
       
-        // Append "div" to "data-container div"
+        // adds div to container
         container.appendChild(bar);
       }
     }
-  
+    
+    //generates the bars when page is loaded
     generatebars();
 }
   
   
+//sets the container of the bars
 const container = document.querySelector(".data-container");
 
 function generatebars(num = 20) {
 
-    //for loop to generate 20 bars
     for (let i = 0; i < num; i += 1) {
 
-        // numbers are generated for bars 15 - 100
         const value = Math.floor(Math.random() * 85) + 15; 
-        
-        // To create element "div"
         const bar = document.createElement("div");
-
-        // To add class "bar" to "div"
         bar.classList.add("bar");
-
-        // Provide height to the bar
         bar.style.height = `${value * 3}px`;
-
-        // Translate the bar towards positive X axis 
         bar.style.transform = `translateX(${i * 30}px)`;
-        
-        // To create element "label"
         const barLabel = document.createElement("label");
-
-        // To add class "bar_id" to "label"
         barLabel.classList.add("bar_id");
-
-        // Assign value to "label"
         barLabel.innerHTML = value;
-
-        // Append "Label" to "div"
         bar.appendChild(barLabel);
-
-        // Append "div" to "data-container div"
         container.appendChild(bar);
     }
 }
