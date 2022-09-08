@@ -10,29 +10,47 @@
     <!-- linking the css stylesheet-->
     <link rel="stylesheet" href="css/main.css"/>
     <!-- title -->
-    <title>Sorting Visualizer</title>
-    
+
 </head>
 
 <!-- body -->
 <body >
     <!-- linking the javascript sorts file-->
     <script src="js/sorts.js"></script>
-    <section class="head">Sorting Visualizer</section>
+    <div id = "title">
+        <h1>Sort Visualizer</h1>
+        <button  class="btn1" onclick="generate()" id="Button1" >New Array</button>  
+    </div>
     <section class="data-container"></section> 
       
-    <!-- "Generate New Array" button -->
-    <button  class="btn1" onclick="generate()" id="Button1" >New Array</button>   
-     
-    <!-- "Selection Sort" button -->
-    <button class="btn2" 
-           onclick="SelectionSort(),disable()" id="Button2" >
-    Selection Sort</button>
-    </body>
-  
-    <!-- "Merge Sort" button -->
-    <button class="btn3" 
-           onclick="MergeSort(),disable()" id="Button3" >
-    Merge Sort</button>
+    <div id = "main">
+        <!-- "Selection Sort" button -->
+        <button class="btn2" onclick="SelectionSort(),disable()" id="Button2" >
+        Selection Sort</button>
+        </body>
+        
+        <!-- "Merge Sort" button -->
+        <button class="btn3" 
+        onclick="MergeSort(),disable()" id="Button3" >
+        Merge Sort</button>
+        
+        <!-- "Bubble Sort" button -->
+        <button class="btn4" 
+        onclick="BubbleSort(),disable()" id="Button4" >
+        Bubble Sort</button>
+        
+        <!-- "Quick Sort" button -->
+        <button class="btn5" 
+        onclick="QuickSort(),disable()" id="Button5" >
+        Quick Sort</button>
+        
+        <!-- "Strand Sort" button -->
+        <button class="btn6" 
+        onclick="StrandSort(),disable()" id="Button6" >
+        Strand Sort</button>       
+    </div>
+
+
+
     </body>
 </html>

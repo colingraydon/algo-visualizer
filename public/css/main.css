@@ -9,16 +9,48 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
   
+#line {
+    position: relative; 
+    margin: 0 auto;
+    gap: 1em;
+}
+
+#title {
+    display:flex;
+    justify-content: center;
+    align-items: flex-end;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    margin-right: 20vw;
+    margin-left: 20vw;
+    text-align: center;
+    font-size: 15px;
+    row-gap: 5px;
+    gap: 6em;
+}
+#main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Vertical align the elements to the center */
+    text-align: center;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+    margin-right: 20vw;
+    margin-left: 20vw;
+    text-align: center;
+    font-size: 15px;
+    row-gap: 5px;
+    gap: 1em;
+}
 .head {
     margin-top: 20px;
     margin-right: 20vw;
     margin-left: 20vw;
     text-align: center;
     font-size: 30px;
-    /*background-color: #6f459e;*/
     color: white;
-    /*border-radius: 19px;*/
-    /*font-weight: bolder;*/
 }
   
 .data-container {
@@ -27,7 +59,14 @@ body {
     position: relative;
     margin: 0 auto;
 }
-  
+
+
+h1 {
+    margin:0;
+    text-align: center;
+    font-weight: normal;
+}
+
 .bar {
     width: 28px;
     position: absolute;
@@ -48,32 +87,59 @@ body {
 }
 .btn1 {
     padding: 12px;
-    font-weight: bolder;
     background-color: rgb(0, 173, 181);
     border-radius: 10px;
     color: white;
     font-size: 16px;
     border: white;
-    margin-left: 37vw;
+    /*margin-left: 37vw;*/
     margin-top: 4vw;
-    margin-right: 1vw;
+    margin-left: relative;
 }
 .btn2 {
     padding: 12px;
-    font-weight: bolder;
     background-color: rgb(0, 173, 181);
     border-radius: 10px;
     color: white;
     font-size: 16px;
     border: white;
+    margin-top: 4vw;
+    margin-left: relative;
 }
 
 .btn3 {
     padding: 12px;
-    font-weight: bolder;
     background-color: rgb(0, 173, 181);
     border-radius: 10px;
     color: white;
     font-size: 16px;
     border: white;
+    margin-top: 4vw;
+}
+.btn4 {
+    padding: 12px;
+    background-color: rgb(0, 173, 181);
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    border: white;
+    margin-top: 4vw;
+}
+.btn5 {
+    padding: 12px;
+    background-color: rgb(0, 173, 181);
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    border: white;
+    margin-top: 4vw;
+}
+.btn6 {
+    padding: 12px;
+    background-color: rgb(0, 173, 181);
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    border: white;
+    margin-top: 4vw;
 }

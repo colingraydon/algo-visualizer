@@ -164,6 +164,15 @@ function enableButtons()
 
     document.getElementById("Button3").disabled = false;
     document.getElementById("Button3").style.backgroundColor = "#00ADB5";  
+
+    document.getElementById("Button4").disabled = false;
+    document.getElementById("Button4").style.backgroundColor = "#00ADB5";
+
+    document.getElementById("Button5").disabled = false;
+    document.getElementById("Button5").style.backgroundColor = "#00ADB5";
+
+    document.getElementById("Button6").disabled = false;
+    document.getElementById("Button6").style.backgroundColor = "#00ADB5";  
 }
 
 // function to generate new random array 
@@ -184,4 +193,13 @@ function disable()
 
     document.getElementById("Button3").disabled = true;
     document.getElementById("Button3").style.backgroundColor = "#393E46"; 
+
+    document.getElementById("Button4").disabled = true;
+    document.getElementById("Button4").style.backgroundColor = "#393E46";
+
+    document.getElementById("Button5").disabled = true;
+    document.getElementById("Button5").style.backgroundColor = "#393E46"; 
+
+    document.getElementById("Button6").disabled = true;
+    document.getElementById("Button6").style.backgroundColor = "#393E46"; 
 }
