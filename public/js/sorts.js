@@ -135,6 +135,14 @@ async function SelectionSort(delay = 100) {
     enableButtons();
 }
 
+async function MergeSort(delay = 100) {}
+
+async function BubbleSort(delay = 100) {}
+
+async function QuickSort(delay = 100) {}
+
+async function StrandSort(delay = 100) {}
+
 //turns the buttons back on
 function enableButtons()
 {
