@@ -13,8 +13,8 @@ app.use('/css', express.static(__dirname + 'public/css'))
 app.use('/js', express.static(__dirname + 'public/js'))
 
 //sets the view engine to use the root dir folder and ejs
-// app.set('views', "./views")
-app.set("views", "./")
+app.set('views', "./views")
+//app.set("views", "./")
 app.set('view engine', 'ejs')
 
 //renders the home page index.ejs
