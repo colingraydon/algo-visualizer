@@ -47,6 +47,7 @@ window.onload = () => {
 //sets the container of the bars
 const container = document.querySelector(".data-container");
 
+//same function as earlier, but will be used when new array button is clicked, not on initial page load
 function generatebars(num = 20) {
 
     for (let i = 0; i < num; i += 1) {
@@ -67,11 +68,13 @@ function generatebars(num = 20) {
 
 async function SelectionSort(delay = 100) {
 
+    // uses the css styling for the bars
     let bars = document.querySelectorAll(".bar");
 
     var min = 0;
     for (var i = 0; i < bars.length; i += 1) {
 
+        //sets min element to i
         min = i;
 
         // white color for ith bar
@@ -90,11 +93,14 @@ async function SelectionSort(delay = 100) {
 
             // int value of j bar stored to var1
             var val1 = parseInt(bars[j].childNodes[0].innerHTML);
-            console.log("val1 is", val1);
+
+            //console logs the value, not a ncessary line
+            //console.log("val1 is", val1);
+
             // int value of min bar stored to var2 
             var val2 = parseInt(bars[min].childNodes[0].innerHTML);
                 
-            // Compare val1 & val2
+            // compares val1 & val2
             if (val1 < val2) {
                 if (min !== i) {
 
