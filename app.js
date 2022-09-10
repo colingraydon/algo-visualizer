@@ -22,5 +22,17 @@ app.get('', (req, res) => {
     res.render('index')
 })
 
+//renders the tree page
+app.get('/tree', (req, res) => {
+    res.render('tree')
+})
+
+app.get('/pathfinding', (req, res) => {
+    res.render('pathfinding')
+})
+
+app.get('/about', (req, res) => {
+    res.render('about')
+})
 //has the app listen on port 3000 or one sent in process.env
 app.listen(PORT, () => console.info(`listening on port ${PORT}`))

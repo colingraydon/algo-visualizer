@@ -32,7 +32,7 @@ body {
 #main {
     display: flex;
     justify-content: center;
-    align-items: flex-end; /* Vertical align the elements to the center */
+    align-items: flex-end;
     text-align: center;
     color:white;
     font-family: Arial, Helvetica, sans-serif;
@@ -88,47 +88,50 @@ h1 {
 .btn1 {
     padding: 12px;
     background-color: rgb(0, 173, 181);
-    border-radius: 10px;
+    border-radius: 5px;
     color: white;
     font-size: 16px;
     border: white;
-    /*margin-left: 37vw;*/
     margin-top: 4vw;
     margin-left: relative;
+    cursor: pointer
 }
 .btn2 {
     padding: 12px;
     background-color: rgb(0, 173, 181);
-    border-radius: 10px;
+    border-radius: 5px;
     color: white;
     font-size: 16px;
     border: white;
     margin-top: 4vw;
     margin-left: relative;
+    cursor: pointer
 }
 
 .btn3 {
     padding: 12px;
     background-color: rgb(0, 173, 181);
-    border-radius: 10px;
+    border-radius: 5px;
     color: white;
     font-size: 16px;
     border: white;
     margin-top: 4vw;
+    cursor: pointer
 }
 .btn4 {
     padding: 12px;
     background-color: rgb(0, 173, 181);
-    border-radius: 10px;
+    border-radius: 5px;
     color: white;
     font-size: 16px;
     border: white;
     margin-top: 4vw;
+    cursor: pointer
 }
 .btn5 {
     padding: 12px;
     background-color: rgb(0, 173, 181);
-    border-radius: 10px;
+    border-radius: 5px;
     color: white;
     font-size: 16px;
     border: white;
@@ -137,9 +140,70 @@ h1 {
 .btn6 {
     padding: 12px;
     background-color: rgb(0, 173, 181);
-    border-radius: 10px;
+    border-radius: 5px;
     color: white;
     font-size: 16px;
     border: white;
     margin-top: 4vw;
+    cursor: pointer
+}
+
+.navlist {
+    box-shadow: 0px 0px 10px;
+    color: rgb(57, 62, 70);
+    background-color: rgb(57, 62, 70);
+    margin:0;
+    padding:1rem 0;
+    border-radius: .2rem;
+    display:flex;
+    justify-content:flex-start;
+    align-items: center;
+}
+
+.nav-item{
+    list-style: none;  
+    margin-left: 2rem;
+} 
+
+.nav-item a{
+    text-decoration: none;
+    color:white
+}
+
+.nav-item:nth-child(4) {
+    margin-right: 2rem;
+    margin-left:auto;
+}
+
+
+.abouttext {
+    display: flex;
+    align-items: flex-start;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 70px;
+    margin-right: 20vw;
+    margin-left: 20vw;
+    font-size: 20px;
+    row-gap: 5px;
+    gap: 1em;
+}
+
+.aboutlist {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 70px;
+    margin-right: 20vw;
+    margin-left: 20vw;
+    font-size: 25px;
+    color: white
+
+}
+.aboutlinks {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+    /* margin-top: 20px; */
+    color:white
 }
