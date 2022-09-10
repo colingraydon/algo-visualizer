@@ -95,7 +95,7 @@ async function SelectionSort(delay = 100) {
             var val1 = parseInt(bars[j].childNodes[0].innerHTML);
 
             //console logs the value, not a ncessary line
-            console.log("val1 is", val1);
+            //console.log("val1 is", val1);
 
             // int value of min bar stored to var2 
             var val2 = parseInt(bars[min].childNodes[0].innerHTML);
