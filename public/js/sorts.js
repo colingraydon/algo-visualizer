@@ -3,40 +3,40 @@ window.onload = () => {
     const container = document.querySelector(".data-container");
   
     function generatebars(num = 20) {
+    
+        //for loop to generate 20 bars
+        for (let i = 0; i < num; i += 1) {
       
-      //for loop to generate 20 bars
-      for (let i = 0; i < num; i += 1) {
-      
-        // generates random values from 15 - 100
-        const value = Math.floor(Math.random() * 85) + 15; 
-          
-        // makes div element
-        const bar = document.createElement("div");
-      
-        // adds bar class to div
-        bar.classList.add("bar");
-      
-        // sets hight based on value
-        bar.style.height = `${value * 3}px`;
-      
-        // transforms bar on x axis
-        bar.style.transform = `translateX(${i * 30}px)`;
-          
-        // makes a label
-        const barLabel = document.createElement("label");
-      
-        // adds bar_id to label
-        barLabel.classList.add("bar_id");
-      
-        // sets the value of the height to inner html
-        barLabel.innerHTML = value;
+            // generates random values from 15 - 100
+            const value = Math.floor(Math.random() * 85) + 15; 
+            
+            // makes div element
+            const bar = document.createElement("div");
         
-        // adds label to div
-        bar.appendChild(barLabel);
-      
-        // adds div to container
-        container.appendChild(bar);
-      }
+            // adds bar class to div
+            bar.classList.add("bar");
+        
+            // sets hight based on value
+            bar.style.height = `${value * 3}px`;
+        
+            // transforms bar on x axis
+            bar.style.transform = `translateX(${i * 30}px)`;
+            
+            // makes a label
+            const barLabel = document.createElement("label");
+        
+            // adds bar_id to label
+            barLabel.classList.add("bar_id");
+        
+            // sets the value of the height to inner html
+            barLabel.innerHTML = value;
+            
+            // adds label to div
+            bar.appendChild(barLabel);
+        
+            // adds div to container
+            container.appendChild(bar);
+        }
     }
     
     //generates the bars when page is loaded

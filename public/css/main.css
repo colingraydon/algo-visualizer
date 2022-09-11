@@ -96,57 +96,6 @@ h1 {
     margin-left: relative;
     cursor: pointer
 }
-.btn2 {
-    padding: 12px;
-    background-color: rgb(0, 173, 181);
-    border-radius: 5px;
-    color: white;
-    font-size: 16px;
-    border: white;
-    margin-top: 4vw;
-    margin-left: relative;
-    cursor: pointer
-}
-
-.btn3 {
-    padding: 12px;
-    background-color: rgb(0, 173, 181);
-    border-radius: 5px;
-    color: white;
-    font-size: 16px;
-    border: white;
-    margin-top: 4vw;
-    cursor: pointer
-}
-.btn4 {
-    padding: 12px;
-    background-color: rgb(0, 173, 181);
-    border-radius: 5px;
-    color: white;
-    font-size: 16px;
-    border: white;
-    margin-top: 4vw;
-    cursor: pointer
-}
-.btn5 {
-    padding: 12px;
-    background-color: rgb(0, 173, 181);
-    border-radius: 5px;
-    color: white;
-    font-size: 16px;
-    border: white;
-    margin-top: 4vw;
-}
-.btn6 {
-    padding: 12px;
-    background-color: rgb(0, 173, 181);
-    border-radius: 5px;
-    color: white;
-    font-size: 16px;
-    border: white;
-    margin-top: 4vw;
-    cursor: pointer
-}
 
 .navlist {
     box-shadow: 0px 0px 10px;
@@ -204,6 +153,42 @@ h1 {
     justify-content: center;
     align-items: flex-start;
     text-align: center;
-    /* margin-top: 20px; */
     color:white
+}
+
+
+.tree-container {
+
+    text-align: center;
+    margin-top: 50px;
+    font-size: 25px;
+    color: white
+}
+
+.tree {
+    width: 28px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: rgb(57, 62, 70);
+    transition: 0.2s all ease;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+  
+.tree_id {
+
+    text-align: center;
+    font-size: 20px;
+    color: white;
+}
+
+.tree-values {
+
+    flex: auto;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    margin-top: 40px;
 }
