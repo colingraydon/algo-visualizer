@@ -186,9 +186,46 @@ h1 {
 
 .tree-values {
 
-    flex: auto;
     text-align: center;
     font-size: 20px;
     color: white;
+    margin-top: 40px;
+}
+
+#treemain {
+    /* display: flex;
+    justify-content: center;
+    align-items: flex-end; */
+    text-align: center;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    /* margin-top: 10px; */
+    /* margin-right: 20vw;
+    margin-left: 20vw; */
+    margin: auto;
+    text-align: center;
+    font-size: 15px;
+    row-gap: 5px;
+    gap: 1em;
+}
+
+.treeRoot {
+    background: #393E46;
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    margin-top: 40px;
+    border-radius: 50%;
+    display:flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.tree-canvas {
+    border:1px solid black;
+    height: 100%;
+    width: 100%;
     margin-top: 40px;
 }

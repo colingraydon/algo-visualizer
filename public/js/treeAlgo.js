@@ -1,3 +1,95 @@
+var canvas = document.querySelector("canvas")
+var c = canvas.getContext('2d')
+
+class Node{
+
+    constructor(value) {
+        this.value = value
+        this.left = null
+        this.right = null
+    }
+}
+
+class Tree{
+
+    constructor() {
+        this.root = null
+        this.count = 0
+    }
+
+    addNode(val) {
+        
+        let newNode = new Node(val)
+
+        this.count++
+        const searchTree = node => {
+
+            if (this.root === null) {
+                this.root = newNode
+            }
+            else if (val < node.value) {
+
+                if (!node.left) {
+                    node.left = newNode
+                }
+
+                else {
+                    searchTree(node.left)
+                }
+            }
+            else if (val > node.value) {
+
+                if (!node.right) {
+                    node.right = newNode
+                }
+                else {
+                    searchTree(node.right)
+                }
+            }
+        }
+
+        searchTree(this.root)
+    }
+
+    getSize() {
+        return this.count
+    }
+    //checks left, then root, then right
+    inOrder() {
+        let result = []
+        const traverse = node => {
+            if (node.left) traverse (node.left)
+            result.push(node.value)
+            console.log(node.value, "= node.value inOrder")
+            if (node.right) traverse (node.right)
+        }
+        return result
+    }
+    //checks root, then left, then right
+    preOrder() {
+        let result = []
+        const traverse = node => {
+            result.push(node.value)
+            if (node.left) traverse(node.left)
+            if (node.right) traverse (node.right)
+        }
+        return result
+    }
+
+    //checks left, then right, then root
+    postOrder() {
+        let result = []
+        const traverse = node => {
+            if (node.left) traverse(node.left)
+            if (node.right) traverse (node.right)
+            result.push(node.value)
+        }
+        return result
+    }
+
+    // 
+}
+
 
 //sets the container for the nodes
 const container = document.querySelector(".tree-container");
@@ -58,41 +150,23 @@ function refreshInput(num = 10) {
     }
 
 }
-    
-//sets constants for accessing child value in the children array, to keep it easy to remember
-var l = 0
-var r = 1
 
-class Node {
 
-    //constructs a node, passes in the value
-    constructor(value){
-        
-        this.value = value
-        this.childen = []
-        this.parent = null
 
+function generateTree() {
+
+    let val = document.querySelectorAll(".tree-values")
+    arr = []
+    for (let i = 1; i < val.length; i += 1) {
+
+        arr.push(val[i].innerHTML)
     }
 
-    getLeft() {
-        return this.children[l]
-    }
+    const bst = new Tree()
 
-    getRight() {
-        return this.children[r]
-    }
-
-    setLeft(val) {
-        val.parent = this
-        this.children[l] = val
-    }
-
-    setRight(val) {
-        val.parent = this
-        this.children[r] = val
-    }
-
-
+    for (let i = 0; i < arr.length; i += 1) {
+        const node = document.createElement("div")
+        bst.addNode(arr[i])
+    }    
 }
-
-
+    
