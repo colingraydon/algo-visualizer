@@ -1,12 +1,19 @@
-var canvas = document.querySelector("canvas")
-var c = canvas.getContext('2d')
+function loaded() {
+    
+    const canvas = document.getElementById("canvas");
+    const c = canvas.getContext('2d');
+    
+    c.fillRect(100, 100, 100, 100)
+}
 
 class Node{
 
-    constructor(value) {
+    constructor(value, x, y) {
         this.value = value
         this.left = null
         this.right = null
+        this.x = x
+        this.y = y
     }
 }
 
@@ -14,23 +21,25 @@ class Tree{
 
     constructor() {
         this.root = null
-        this.count = 0
     }
 
     addNode(val) {
         
         let newNode = new Node(val)
 
-        this.count++
         const searchTree = node => {
 
             if (this.root === null) {
                 this.root = newNode
+                this.root.x = width / 2
+                this.root.y = 20
             }
             else if (val < node.value) {
 
                 if (!node.left) {
                     node.left = newNode
+                    this.left.x = this.x - 50
+                    this.left.y = this.y + 20
                 }
 
                 else {
@@ -41,6 +50,8 @@ class Tree{
 
                 if (!node.right) {
                     node.right = newNode
+                    this.right.x = this.x + 50
+                    this.rigth.y = this.y + 20
                 }
                 else {
                     searchTree(node.right)
