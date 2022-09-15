@@ -1,3 +1,8 @@
+const purple = "#6A348F"
+const white = "#EEEEEE"
+const gray = "#393E46"
+const teal = "#00ADB5"
+
 window.onload = () => {
 
     const container = document.querySelector(".data-container");
@@ -279,9 +284,128 @@ async function BubbleSort(delay = 100) {
     enableButtons();
 }
 
-async function QuickSort(delay = 100) {
+let lastIteration = false
+let quickSortCounter = 0
 
+async function QuickSortWrapper(delay = 100) {
+
+    QuickSort(0, 19)
+}
+
+async function QuickSortFinisher(delay = 500) {
+
+    let bars = document.querySelectorAll(".bar")
+    for (let i = 0; i < bars.length -1; i++) {
+        temp1 = parseInt(bars[i].childNodes[0].innerHTML)
+        temp2= parseInt(bars[i+1].childNodes[0].innerHTML)
+        if (temp1 > temp2) {
+            quickSortCounter += 1
+        }
+    }
+}
+async function QuickSort(low, high) {
+
+
+    let bars = document.querySelectorAll(".bar")
+
+    console.log("started")
+    if (low < high) {
+        await new Promise((resolve) =>
+        setTimeout(() => {
+        resolve();
+        }, 500)
+        )
+
+        let pivot = await QuickSortPartition(low, high)
+
+        QuickSort(low, (pivot - 1))
+        QuickSort((pivot + 1), high)
+
+    }
+    if (lastIteration == true) {
+
+        await new Promise((resolve) =>
+        setTimeout(() => {
+        resolve();
+        }, 1500)
+        )
+ 
+        let count = await QuickSortFinisher()
+        if (count != 0) {
+            await new Promise((resolve) =>
+            setTimeout(() => {
+            resolve();
+            }, 1500)
+            )
+        }
+        for (let l = 0; l < bars.length; l++) {
+            bars[l].style.backgroundColor = teal
+        }
+        enableButtons()
+    }
+    
+}
+
+
+async function QuickSortPartition(low, high) {
+
+
+    // const purple = "#6A348F"
+    // const white = "#EEEEEE"
+    // const gray = "#393E46" 
+    quickSortFinished = false
     let bars = document.querySelectorAll(".bar");
+
+    let pivot = parseInt(bars[high].childNodes[0].innerHTML)
+    let i = low - 1
+
+    bars[high].style.backgroundColor = white
+    for( let j = low; j <= (high -1); j ++) {
+
+        bars[j].style.backgroundColor = purple
+        await new Promise((resolve) =>
+        setTimeout(() => {
+        resolve();
+        }, 100)
+        )
+
+        jValue = parseInt(bars[j].childNodes[0].innerHTML)
+
+
+        if (jValue< pivot) {
+
+            i++
+            // bars[i].style.backgroundColor = teal
+            var temp1 = bars[j].style.height;
+            var temp2 = bars[j].childNodes[0].innerText;
+            bars[j].style.height = bars[i].style.height;
+            bars[i].style.height = temp1;
+            bars[j].childNodes[0].innerText = bars[i].childNodes[0].innerText;
+            bars[i].childNodes[0].innerText = temp2;
+        }
+
+        bars[j].style.backgroundColor = gray
+
+        
+    }
+    var temp1 = bars[high].style.height;
+    var temp2 = bars[high].childNodes[0].innerText;
+    bars[high].style.height = bars[i+1].style.height;
+    bars[i+1].style.height = temp1;
+    bars[high].childNodes[0].innerText = bars[i+1].childNodes[0].innerText;
+    bars[i+1].childNodes[0].innerText = temp2;
+    bars[high].style.backgroundColor = teal
+    bars[i+1].style.backgroundColor = teal
+
+    //bars[high].style.backgroundColor = gray
+
+    if (high - low == 1) {
+        for (let k = high; k < bars.length; k++) {
+            bars[k].style.backgroundColor = teal
+        }
+        lastIteration = true
+    }
+    return (i +1)
 }
 
 async function InsertionSort(delay = 100) {
