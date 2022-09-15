@@ -14,10 +14,10 @@
 </head>
 
 <!-- body -->
-<body >
+<body onload="randomizeInput()">
     <!-- linking the javascript sorts file-->
     <script src="js/treeAlgo.js"></script>
-    <!--div tag with the header and new array button-->
+    <!--nav bar-->
     <navbar>
         <ul class="navlist">
             <li class="nav-item">
@@ -34,7 +34,23 @@
            </li>
         </ul>        
     </navbar>
+    <!--title with button and randomized values-->
+    <div id="title">
+        <h1>Tree Visualizer</h1>
+        <button class="btn1" onclick="refreshInput()" id="btn7">New Values</button>
+    </div>
+    <div id="tree-values"></div>
+    <div id = "treemain">
+        <button class="btn1" onclick="generateTree()" id="btn8">Generate Tree</button>
+        <button class="btn1" onclick="add later" id="btn9">In-order</button>
+        <button class="btn1" onclick="add later" id="btn10">Pre-order</button>
+        <button class="btn1" onclick="add later" id="btn10">Post-order</button>
+    </div>
+    <canvas onload="loaded()" id="tree-canvas"></canvas>
+
+
+
 
 
     </body>
-</html>
+</html> 

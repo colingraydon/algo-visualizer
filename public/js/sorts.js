@@ -3,40 +3,40 @@ window.onload = () => {
     const container = document.querySelector(".data-container");
   
     function generatebars(num = 20) {
+    
+        //for loop to generate 20 bars
+        for (let i = 0; i < num; i += 1) {
       
-      //for loop to generate 20 bars
-      for (let i = 0; i < num; i += 1) {
-      
-        // generates random values from 15 - 100
-        const value = Math.floor(Math.random() * 85) + 15; 
-          
-        // makes div element
-        const bar = document.createElement("div");
-      
-        // adds bar class to div
-        bar.classList.add("bar");
-      
-        // sets hight based on value
-        bar.style.height = `${value * 3}px`;
-      
-        // transforms bar on x axis
-        bar.style.transform = `translateX(${i * 30}px)`;
-          
-        // makes a label
-        const barLabel = document.createElement("label");
-      
-        // adds bar_id to label
-        barLabel.classList.add("bar_id");
-      
-        // sets the value of the height to inner html
-        barLabel.innerHTML = value;
+            // generates random values from 15 - 100
+            const value = Math.floor(Math.random() * 85) + 15; 
+            
+            // makes div element
+            const bar = document.createElement("div");
         
-        // adds label to div
-        bar.appendChild(barLabel);
-      
-        // adds div to container
-        container.appendChild(bar);
-      }
+            // adds bar class to div
+            bar.classList.add("bar");
+        
+            // sets hight based on value
+            bar.style.height = `${value * 3}px`;
+        
+            // transforms bar on x axis
+            bar.style.transform = `translateX(${i * 30}px)`;
+            
+            // makes a label
+            const barLabel = document.createElement("label");
+        
+            // adds bar_id to label
+            barLabel.classList.add("bar_id");
+        
+            // sets the value of the height to inner html
+            barLabel.innerHTML = value;
+            
+            // adds label to div
+            bar.appendChild(barLabel);
+        
+            // adds div to container
+            container.appendChild(bar);
+        }
     }
     
     //generates the bars when page is loaded
@@ -72,7 +72,7 @@ async function SelectionSort(delay = 100) {
     let bars = document.querySelectorAll(".bar");
 
     var min = 0;
-    for (var i = 0; i < bars.length; i += 1) {
+    for (var i = 0; i < bars.length; i += 1) { 
 
         //sets min element to i
         min = i;
@@ -141,13 +141,204 @@ async function SelectionSort(delay = 100) {
     enableButtons();
 }
 
-async function MergeSort(delay = 100) {}
+async function MergeSort(delay = 100) {
 
-async function BubbleSort(delay = 100) {}
+    let bars = document.querySelectorAll(".bar")
+    var arr = []
+    var itmd = []
+    var visited = []
 
-async function QuickSort(delay = 100) {}
+    l_index = 9
+    r_index = 10
 
-async function StrandSort(delay = 100) {}
+    for (var i = 0; i < bars.length; i += 1) {
+        itmd.push(0)
+        visited.push(0)
+    }
+}
+
+function merge(arr, l, m, r) {
+    
+    var n1 = m - l + 1;
+    var n2 = r - m;
+  
+    // Create temp arrays
+    var L = new Array(n1); 
+    var R = new Array(n2);
+  
+    // Copy data to temp arrays L[] and R[]
+    for (var i = 0; i < n1; i++)
+        L[i] = arr[l + i];
+    for (var j = 0; j < n2; j++)
+        R[j] = arr[m + 1 + j];
+  
+    // Merge the temp arrays back into arr[l..r]
+  
+    // Initial index of first subarray
+    var i = 0;
+  
+    // Initial index of second subarray
+    var j = 0;
+  
+    // Initial index of merged subarray
+    var k = l;
+  
+    while (i < n1 && j < n2) {
+        if (L[i] <= R[j]) {
+            arr[k] = L[i];
+            i++;
+        }
+        else {
+            arr[k] = R[j];
+            j++;
+        }
+        k++;
+    }
+  
+    // Copy the remaining elements of
+    // L[], if there are any
+    while (i < n1) {
+        arr[k] = L[i];
+        i++;
+        k++;
+    }
+  
+    // Copy the remaining elements of
+    // R[], if there are any
+    while (j < n2) {
+        arr[k] = R[j];
+        j++;
+        k++;
+    }
+}
+
+async function BubbleSort(delay = 100) {
+
+    let bars = document.querySelectorAll(".bar")
+    var i,j
+    for (i = 0; i < (bars.length -1); i ++) {
+
+        // white color for ith bar
+        bars[bars.length - 1 - i].style.backgroundColor = "#EEEEEE";
+        for (j = 0; j < (bars.length - i -1); j ++) {
+
+            //purple color for j bar
+            if (j != i) {
+                bars[j].style.backgroundColor = "#6A348F";
+            }
+
+            // waits for 100 ms
+            await new Promise((resolve) =>
+            setTimeout(() => {
+            resolve();
+            }, 100)
+            );
+
+            var val1 = parseInt(bars[j].childNodes[0].innerHTML)
+            var val2 = parseInt(bars[j+1].childNodes[0].innerHTML)
+
+            if (val1 > val2) {
+
+                var temp1 = bars[j].style.height
+                var temp2 = bars[j].childNodes[0].innerText
+                bars[j].style.height = bars[j+1].style.height
+                bars[j+1].style.height = temp1
+                bars[j].childNodes[0].innerText = bars[j+1].childNodes[0].innerText
+                bars[j+1].childNodes[0].innerText = temp2
+
+            }
+
+            // light gray color for jth bar
+            if (j != i) {
+                bars[j].style.backgroundColor = "#393E46";
+            }
+        }
+
+        // waits for 200 ms
+        await new Promise((resolve) =>
+        setTimeout(() => {
+            resolve();
+        }, 200)
+        );
+
+        // purple color for min bar
+        //bars[j].style.backgroundColor = "#6A348F";
+
+        // teal color for ith bar, now that it has been sorted
+        // bars[i].style.backgroundColor = "#00ADB5";
+
+        //bars[i].style.backgroundColor = "#393E46"
+        // white color for ith bar
+        bars[bars.length - 1 - i].style.backgroundColor = "#00ADB5";
+    }
+
+    bars[0].style.backgroundColor = "#00ADB5"
+
+
+    //turns the buttons back on now that the sort has concluded
+    enableButtons();
+}
+
+async function QuickSort(delay = 100) {
+
+    let bars = document.querySelectorAll(".bar");
+}
+
+async function InsertionSort(delay = 100) {
+
+    let bars = document.querySelectorAll(".bar");
+
+    let i, j, k
+    for (i = 1; i < bars.length; i ++) {
+        // white color for ith bar
+        bars[i].style.backgroundColor = "#EEEEEE";
+        k = parseInt(bars[i].childNodes[0].innerHTML)
+        k_height = bars[i].style.height
+        //console.log(k, "=k")
+        j = i - 1
+
+        while (j >= 0 && (bars[j].childNodes[0].innerHTML > k)) {
+            
+            bars[j].style.backgroundColor = "#6A348F"
+            temp1 = bars[j].childNodes[0].innerText
+            temp2 = bars[j].style.height
+            bars[j+1].childNodes[0].innerText = temp1
+            bars[j+1].style.height = temp2
+            j = j-1
+
+            await new Promise((resolve) =>
+            setTimeout(() => {
+                resolve();
+            }, 200)
+            );
+
+            bars[j+1].style.backgroundColor =  "#393E46"
+
+        }
+
+
+        for(let r = 0; r< (j+1); r++) {
+            bars[r].style.backgroundColor = "#00ADB5";           
+        }
+
+        await new Promise((resolve) =>
+        setTimeout(() => {
+            resolve();
+        }, 600)
+        );
+        
+        bars[j+1].childNodes[0].innerHTML = k
+        bars[j+1].style.height = k_height
+
+        // light gray color for jth bar
+        bars[i].style.backgroundColor = "#393E46";
+    }
+
+    for(let l = 0; l< bars.length; l++) {
+        bars[l].style.backgroundColor = "#00ADB5";           
+    }
+    enableButtons()
+}
 
 //turns the buttons back on
 function enableButtons()
