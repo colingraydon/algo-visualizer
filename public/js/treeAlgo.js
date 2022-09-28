@@ -8,18 +8,20 @@ function loaded() {
 
 class Node{
 
-    constructor(value, x, y) {
+    constructor(value) {
         this.value = value
         this.left = null
         this.right = null
-        this.x = x
-        this.y = y
     }
 }
 
+
+function inOrderWrapper() {
+
+}
 class Tree{
 
-    constructor() {
+    constructor() { 
         this.root = null
     }
 
@@ -31,15 +33,11 @@ class Tree{
 
             if (this.root === null) {
                 this.root = newNode
-                this.root.x = width / 2
-                this.root.y = 20
             }
             else if (val < node.value) {
 
                 if (!node.left) {
                     node.left = newNode
-                    this.left.x = this.x - 50
-                    this.left.y = this.y + 20
                 }
 
                 else {
@@ -50,8 +48,6 @@ class Tree{
 
                 if (!node.right) {
                     node.right = newNode
-                    this.right.x = this.x + 50
-                    this.rigth.y = this.y + 20
                 }
                 else {
                     searchTree(node.right)
@@ -62,9 +58,7 @@ class Tree{
         searchTree(this.root)
     }
 
-    getSize() {
-        return this.count
-    }
+
     //checks left, then root, then right
     inOrder() {
         let result = []
@@ -74,8 +68,12 @@ class Tree{
             console.log(node.value, "= node.value inOrder")
             if (node.right) traverse (node.right)
         }
+        // for (i = 0; i < result.length; i ++) {
+        //     console.log()
+        // }
         return result
     }
+
     //checks root, then left, then right
     preOrder() {
         let result = []
@@ -100,6 +98,7 @@ class Tree{
 
     // 
 }
+
 
 
 //sets the container for the nodes
@@ -176,8 +175,80 @@ function generateTree() {
     const bst = new Tree()
 
     for (let i = 0; i < arr.length; i += 1) {
-        const node = document.createElement("div")
+        //const node = document.createElement("div")
         bst.addNode(arr[i])
     }    
+
+    return bst
 }
     
+function inOrderWrapper() {
+    
+    let bst = generateTree()
+    let tempRoot = bst.root
+    console.log("root is", tempRoot)
+    let result = inOrder(tempRoot)
+    return result
+}
+
+//checks left, then root, then right
+function inOrder(node) {
+
+    let result = []
+    
+    console.log("called inOrder")
+    console.log("left node is", node.left)
+    if (node.left) inOrder(node.left)
+    result.push(node.value)
+    console.log(node.value, "= node.value inOrder")
+    if (node.right) inOrder(node.right) 
+    return result   
+}
+
+function preOrderWrapper() {
+    
+    let bst = generateTree()
+    let tempRoot = bst.root
+    console.log("root is", tempRoot)
+    let result = preOrder(tempRoot)
+    return result
+}
+
+//checks root, then left, then right
+function preOrder(node) {
+
+    let result = []
+    
+    console.log("called preOrder")
+    console.log("left node is", node.left)
+    result.push(node.value)
+    if (node.left) preOrder(node.left)
+    console.log(node.value, "= node.value preOrder")
+    if (node.right) preOrder(node.right) 
+    return result   
+}
+
+
+function postOrderWrapper() {
+    
+    let bst = generateTree()
+    let tempRoot = bst.root
+    console.log("root is", tempRoot)
+    let result = postOrder(tempRoot)
+    return result
+}
+
+//checks left, then right, then root
+function postOrder(node) {
+
+    let result = []
+    
+    console.log("called postOrder")
+    console.log("left node is", node.left)
+    if (node.left) preOrder(node.left)
+    if (node.right) preOrder(node.right) 
+    result.push(node.value)
+    return result   
+}
+
+
